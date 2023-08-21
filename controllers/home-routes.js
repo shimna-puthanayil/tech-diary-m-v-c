@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one blog
+// GET one blog b
 // Use the custom middleware before allowing the user to access the blog
 router.get('/blog/:id', withAuth, async (req, res) => {
   try {
@@ -34,6 +34,29 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     });
     const blog = dbBlogData.get({ plain: true });
     res.render('blog', { blog, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET blogs by user id
+// Use the custom middleware before allowing the user to access the blog
+router.get('/dashboard/', withAuth, async (req, res) => {
+  try {
+    const dbBlogData = await Blog.findAll({
+      include: [{ model: User }],
+      where: {
+        userId: req.session.userId,
+      },
+    });
+
+    const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+    console.log(blogs);
+    res.render('dashboard', {
+      blogs,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
