@@ -1,0 +1,18 @@
+<section class='card'>
+  <header>{{blog.name}}
+    <p class='heading-createdby'>Posted By:
+      {{user.name}}
+      on
+      {{format_date blog.dateCreated}}</p></header>
+  <p>{{blog.description}}</p>
+
+</section>
+<form class='form comment-form'>
+  <div class='form-group'>
+    <label for='save-comment'>Comment:</label>
+    <input class='form-input' type='textArea' id='text-comment' />
+  </div>
+  <div class='form-group'>
+    <button class='btn btn-primary' type='submit'>Save</button>
+  </div>
+</form>

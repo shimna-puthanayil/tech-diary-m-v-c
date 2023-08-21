@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
       },
     });
-
+    console.log(req.body.email);
     if (!dbUserData) {
       res
         .status(400)
@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      console.log(req.session.loggedIn);
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });

@@ -1,5 +1,5 @@
 :root {
-  --primary: #111716;
+  --primary: #293a37;
   --secondary: #86938f;
   --tertiary: #5e877f;
   --quatrinary: #6c6b67;
@@ -30,7 +30,6 @@ a:visited {
 
 header {
   padding: 40px;
-  /* text-align: center; */
   background: var(--primary);
   color: var(--light);
 }
@@ -42,12 +41,10 @@ main {
 
 }
 
-
 nav {
   display: flex;
   color: var(--light);
   margin-left: 30px;
-  /* background-color: var(--secondary); */
 }
 
 nav a {
@@ -64,6 +61,7 @@ nav a:hover {
 
 .blog {
   /* flex: 4; */
+  width: 100%;
   background-color: #fff;
   padding: 50px;
   display: flex;
@@ -73,6 +71,7 @@ nav a:hover {
 }
 
 .btn-no-style {
+  color: var(--light);
   background: none;
   border: none;
   padding: 0;
@@ -83,12 +82,7 @@ nav a:hover {
   margin-left: 16px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.painting {
+/* .painting {
   width: 50%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -99,35 +93,37 @@ img {
   text-align: center;
   padding: 10px 20px;
   font-weight: bold;
-}
+} */
 
 /* CARDS */
-.card {
+.card,
+.comment-form {
   margin: 20px;
-  flex: 0 1 100%;
+  /* flex: 0 1 100%; */
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--secondary);
   color: var(--dark);
+  width: 100%;
 }
+
 
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 100%;
-  max-width: 50%;
+  /* max-width: 50%; */
   padding: 5px;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
   border-style: double;
   border-width: thick;
-  background-color: #577a7c;
-  color: var(--light);
+  background-color: var(--secondary);
+  color: var(--dark);
 }
 
 .card header {
   color: var(--light);
   font-weight: bold;
-  /* text-transform: uppercase; */
   margin: 0;
   background-color: var(--primary);
   padding: 0.625rem;
@@ -166,11 +162,8 @@ h1.heading {
   width: 500px;
   padding: 20px;
   margin-left: 40px;
-
   font-size: 3rem;
-
   color: var(--dark);
-  /* padding: 0 10px; */
   display: inline-block;
   border-radius: var(--border-radius);
   box-shadow: 6px 5px var(--quatrinary);
@@ -179,7 +172,10 @@ h1.heading {
 .heading-createdby {
   display: inline-block;
   text-align: right;
-  /* padding-left: 500px; */
   width: 100%;
-  /* margin-left: 900px; */
+}
+
+#text-comment {
+  height: 100px;
+  background-color: var(--light);
 }
