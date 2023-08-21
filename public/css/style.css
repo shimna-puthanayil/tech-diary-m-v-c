@@ -108,7 +108,8 @@ nav a:hover {
 }
 
 
-.login-card {
+.login-card,
+.signup-card {
   margin: 0 0 20px 0;
   flex: 0 0 100%;
   /* max-width: 50%; */
@@ -119,6 +120,18 @@ nav a:hover {
   border-width: thick;
   background-color: var(--secondary);
   color: var(--dark);
+}
+
+.login-card {
+
+  position: relative;
+  left: -270px;
+}
+
+.signup-card {
+  position: relative;
+  left: 250px;
+  top: -350px;
 }
 
 .card header {

@@ -40,7 +40,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
   }
 });
 
-// GET blogs by user id
+// GET blogs of the logged in user
 // Use the custom middleware before allowing the user to access the blog
 router.get('/dashboard/', withAuth, async (req, res) => {
   try {
@@ -52,7 +52,6 @@ router.get('/dashboard/', withAuth, async (req, res) => {
     });
 
     const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
-    console.log(blogs);
     res.render('dashboard', {
       blogs,
       loggedIn: req.session.loggedIn,
