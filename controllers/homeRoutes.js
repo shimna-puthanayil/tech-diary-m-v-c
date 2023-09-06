@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 
 // GET one blog b
 // Use the custom middleware before allowing the user to access the blog
-router.get('/blog/:id', withAuth, async (req, res) => {
+router.get('/post/:id', async (req, res) => {
   try {
     const dbBlogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -86,5 +86,14 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
+router.get('/addnewpost', withAuth, async (req, res) => {
+  try {
+    res.render('addnewpost', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 module.exports = router;

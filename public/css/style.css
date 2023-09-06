@@ -3,7 +3,7 @@
   --secondary: #86938f;
   --tertiary: #5e877f;
   --quatrinary: #6c6b67;
-  --light: #b5c2b5;
+  --light: #d7dad7;
   --dark: #182c23;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
@@ -42,9 +42,9 @@ main {
 }
 
 nav {
-  display: flex;
+  /* display: flex; */
   color: var(--light);
-  margin-left: 1400px;
+  /* margin-left: 1200px; */
 }
 
 nav a {
@@ -82,6 +82,10 @@ nav a:hover {
   margin-left: 16px;
 }
 
+.card {
+  border: 1px solid #1a1a1a;
+  margin-bottom: 1rem;
+}
 
 /* CARDS */
 .card,
@@ -98,25 +102,22 @@ nav a:hover {
 .login-card,
 .signup-card {
   margin: 0 0 20px 0;
-  padding: 5px;
+  padding: 25px;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
   border-style: double;
   border-width: thick;
   background-color: var(--secondary);
   color: var(--dark);
+  width: 75%;
 }
 
-.login-card {
-
-  /* position: relative; */
-  left: -270px;
-}
+.login-card {}
 
 .signup-card {
   /* position: relative; */
-  left: 250px;
-  top: -350px;
+  /* left: 250px; */
+  /* top: -350px; */
 }
 
 .card header {
@@ -184,5 +185,64 @@ h1.heading {
 }
 
 .btn.btn-primary:hover {
-  background-color: var(--quatrinary)
+  /* background-color: var(--quatrinary) */
+}
+
+.btn {
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid transparent;
+  outline: none;
+  color: #1a1a1a;
+  background-color: #aeaeae;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+
+
+form {
+  width: 100%;
+}
+
+form .form-group {
+  display: block;
+  width: 100%;
+  margin: 0.625rem 0;
+}
+
+form .form-input,
+form .form-textarea {
+  display: block;
+}
+
+
+
+form label,
+form .form-label {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0.625rem 0 0.25rem 0.3rem;
+}
+
+form .form-input {
+  width: 100%;
+  padding: 0.75rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  margin: 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #484848;
+  border-radius: 0.3rem;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }

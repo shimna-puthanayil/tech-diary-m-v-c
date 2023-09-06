@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace(`/blog/${id}`);
+      document.location.replace(`/post/${id}`);
     } else {
       alert('Failed to save comment');
     }

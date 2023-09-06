@@ -6,32 +6,14 @@
           on
           {{format_date dateCreated}}</h5></div>
           </header>
-      {{!-- {{name}}
-      <p class='heading-createdby'>Posted By:
-        {{user.name}}
-        on
-        {{format_date dateCreated}}</p>
-      {{!-- <div class='d-flex d-flex justify-content-between bd-highlight'>
-        <div class='p-2 w-100 bd-highlight'><h5>{{name}}</h5></div>
-        <div class='p-2 bd-highlight'><h5>Posted By:{{user.name}} --}}
-            {{!-- on
-            {{format_date dateCreated}}</h5></div> --}}
-      {{!-- </div>  --}}
+    
     </a>
 
   </section>
 {{/each}}
-
-
-
-{{!-- <section class='card'>
-  <a href='/blog/{{id}}'>
-    <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{name}}</h5>
-        <h5 class='heading-createdby me-3'>Posted By:{{user.name}}
-          on
-          {{format_date dateCreated}}</h5></div>
-          </header>
-  </a>
-  <p class="mx-4 px-1 py-3">{{description}}</p>
-
-</section> --}}
+<button
+          id='add-post'
+          class='btn btn-primary rounded-pill px-4 py-1  mt-1'
+          type='submit'
+        >+ Add New Post</button>
+        <script src='/js/dashboard.js'></script>
