@@ -13,7 +13,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/blog/1');
+      document.location.replace('/');
     } else {
       alert('Failed to save comment');
     }

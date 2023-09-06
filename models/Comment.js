@@ -12,7 +12,7 @@ Comment.init(
       autoIncrement: true,
     },
     comment: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     blogId: {
@@ -28,11 +28,6 @@ Comment.init(
         model: 'user',
         key: 'id',
       },
-    },
-    dateCreated: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
   },
   {

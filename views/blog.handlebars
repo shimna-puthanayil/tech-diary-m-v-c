@@ -1,44 +1,19 @@
 <section class='card'>
- 
-    <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{blog.name}}</h5>
-        <h5 class='heading-createdby me-3'>Posted By:{{user.name}}
-          on
-          {{format_date blog.dateCreated}}</h5></div>
-          </header>
-
-  <p class="mx-4 px-1">{{blog.description}}</p>
+  <header>{{blog.name}}
+    <p class='heading-createdby'>Posted By:
+      {{user.name}}
+      on
+      {{format_date blog.dateCreated}}</p></header>
+  <p>{{blog.description}}</p>
 
 </section>
-
-<div class='shadow-sm p-3 mx-0 mb-5 rounded col-12 col-sm-12 comment-form'>
-  <h5 class='px-3 mt-1 mb-3'>{{this.blog.comments.length}} Comments 💬</h5>
-
-  {{#each blog.comments as |comment|}}
-    <section class='mx-3'>
-      <h6 class='fs-5 mb-0'>{{comment.user.name}}</h6>
-      <h6 class='card-subtitle text-body-secondary mb-2'>
-        {{format_date comment.dateCreated}}</h6>
-      {{comment.comment}}
-      <hr class='opacity-25' />
-    </section>{{/each}}
-  <section class='mx-0'>
-    <form class='form'>
-      <div class='form-group col-12 col-sm-12'>
-        <input
-          class='form-input'
-          type='textArea'
-          id='text-comment'
-          placeholder='Comment'
-        />
-      </div>
-      <div class='form-group'>
-        <button
-          id='save-comment'
-          class='btn btn-primary rounded-pill px-4 py-0 mx-3 mt-1'
-          type='submit'
-        >Save</button>
-      </div>
-    </form>
-  </section>
-</div>
+<form class='form comment-form'>
+  <div class='form-group'>
+    <label for='save-comment'>Comment:</label>
+    <input class='form-input' type='textArea' id='text-comment' />
+  </div>
+  <div class='form-group'>
+    <button class='btn btn-primary' type='submit'>Save</button>
+  </div>
+</form>
 <script src='/js/comment.js'></script>
