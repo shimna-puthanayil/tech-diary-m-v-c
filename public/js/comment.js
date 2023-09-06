@@ -1,5 +1,8 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
 
   const comment = document.querySelector('#text-comment').value.trim();
 
@@ -13,7 +16,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace(`/blog/${id}`);
     } else {
       alert('Failed to save comment');
     }

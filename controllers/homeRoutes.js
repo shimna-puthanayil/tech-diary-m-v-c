@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
@@ -29,6 +29,17 @@ router.get('/blog/:id', withAuth, async (req, res) => {
         {
           model: User,
           attributes: ['id', 'name'],
+        },
+        {
+          //to get all the comments related to the recipe including the names of the users who commented
+          model: Comment,
+          attributes: ['dateCreated', 'comment'],
+          include: [
+            {
+              model: User,
+              attributes: ['name'],
+            },
+          ],
         },
       ],
     });

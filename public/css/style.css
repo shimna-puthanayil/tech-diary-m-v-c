@@ -64,7 +64,7 @@ nav a:hover {
   width: 100%;
   background-color: #fff;
   padding: 50px;
-  display: flex;
+  /* display: flex; */
   flex-flow: row wrap;
   justify-content: center;
   /* align-items: center; */
@@ -98,8 +98,7 @@ nav a:hover {
 /* CARDS */
 .card,
 .comment-form {
-  margin: 20px;
-  /* flex: 0 1 100%; */
+  /* margin: 20px; */
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--secondary);
@@ -174,7 +173,7 @@ h1.heading {
   background-color: var(--secondary);
   width: 500px;
   padding: 20px;
-  margin-left: 40px;
+  margin-left: 15px;
   font-size: 3rem;
   color: var(--dark);
   display: inline-block;
@@ -185,7 +184,7 @@ h1.heading {
 .heading-createdby {
   display: inline-block;
   text-align: right;
-  width: 100%;
+  /* width: 100%; */
 }
 
 #text-comment {
