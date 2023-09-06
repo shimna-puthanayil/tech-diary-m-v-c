@@ -64,10 +64,15 @@ nav a:hover {
   width: 100%;
   background-color: #fff;
   padding: 50px;
-  display: flex;
+  /* display: flex; */
   flex-flow: row wrap;
-  justify-content: center;
+  /* justify-content: center; */
   /* align-items: center; */
+}
+
+.btn.btn-primary {
+  background-color: var(--primary);
+  color: #d9e9e8;
 }
 
 .btn-no-style {
@@ -82,24 +87,13 @@ nav a:hover {
   margin-left: 16px;
 }
 
-/* .painting {
-  width: 50%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-}
 
-.painting-details {
-  text-align: center;
-  padding: 10px 20px;
-  font-weight: bold;
-} */
 
 /* CARDS */
 .card,
 .comment-form {
-  margin: 20px;
-  /* flex: 0 1 100%; */
+  /* margin: 20px; */
+  /* height: 200px; */
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--secondary);
@@ -111,8 +105,7 @@ nav a:hover {
 .login-card,
 .signup-card {
   margin: 0 0 20px 0;
-  flex: 0 0 100%;
-  /* max-width: 50%; */
+  flex: 0 0 75%;
   padding: 5px;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
@@ -124,14 +117,14 @@ nav a:hover {
 
 .login-card {
 
-  position: relative;
+  /* position: relative; */
   left: -270px;
 }
 
 .signup-card {
   position: relative;
-  left: 250px;
-  top: -350px;
+  /* left: 250px; */
+  top: - 50px;
 }
 
 .card header {
@@ -174,7 +167,7 @@ h1.heading {
   background-color: var(--secondary);
   width: 500px;
   padding: 20px;
-  margin-left: 40px;
+  margin-left: 14px;
   font-size: 3rem;
   color: var(--dark);
   display: inline-block;
@@ -185,10 +178,29 @@ h1.heading {
 .heading-createdby {
   display: inline-block;
   text-align: right;
-  width: 100%;
+  width: 50%;
+  position: relative;
+  /* left: 240px; */
+  margin-right: 0px;
+}
+
+.heading-title {
+  display: inline;
+  text-align: left;
+  /* width: 100%; */
 }
 
 #text-comment {
   height: 100px;
   background-color: var(--light);
+}
+
+.sec-width {
+  margin: 20px;
+  height: 62px;
+  border: 7px double var(--dark);
+  border-radius: 10px;
+  background-color: var(--secondary);
+  color: var(--dark);
+  width: 100%;
 }

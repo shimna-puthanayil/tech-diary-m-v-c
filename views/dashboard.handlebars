@@ -1,3 +1,37 @@
 {{#each blogs as |blog|}}
-{{> blogs-details}}
+  <section class='sec-width'>
+    <a href='/blog/{{id}}'>
+      <header style='height:50px;padding-top: 10px;padding-bottom: 0px;'><div
+          class='d-flex justify-content-between py-0'
+        ><h5 class='mt-0'>{{name}}</h5>
+          <h5 class='heading-createdby me-3'>Posted By:{{user.name}}
+            on
+            {{format_date dateCreated}}</h5></div>
+      </header>
+      {{!-- {{name}}
+      <p class='heading-createdby'>Posted By:
+        {{user.name}}
+        on
+        {{format_date dateCreated}}</p>
+      {{!-- <div class='d-flex d-flex justify-content-between bd-highlight'>
+        <div class='p-2 w-100 bd-highlight'><h5>{{name}}</h5></div>
+        <div class='p-2 bd-highlight'><h5>Posted By:{{user.name}} --}}
+      {{!-- on
+            {{format_date dateCreated}}</h5></div>
+      </div> --}}
+    </a>
+
+  </section>
 {{/each}}
+
+{{!-- <section class='card'>
+  <a href='/blog/{{id}}'>
+    <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{name}}</h5>
+        <h5 class='heading-createdby me-3'>Posted By:{{user.name}}
+          on
+          {{format_date dateCreated}}</h5></div>
+          </header>
+  </a>
+  <p class="mx-4 px-1 py-3">{{description}}</p>
+
+</section> --}}

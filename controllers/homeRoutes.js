@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
@@ -27,13 +27,21 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     const dbBlogData = await Blog.findByPk(req.params.id, {
       include: [
         {
-          model: User,
-          attributes: ['id', 'name'],
+          //to get all the comments related to the blog including the names of the users who commented
+          model: Comment,
+          attributes: ['dateCreated', 'comment', 'user_id'],
+          include: [
+            {
+              model: User,
+              attributes: ['name'],
+            },
+          ],
         },
       ],
     });
     req.session.blogId = req.params.id;
     const blog = dbBlogData.get({ plain: true });
+    console.log(blog.comments);
     res.render('blog', {
       blog,
       blogId: req.session.blogId,
@@ -57,6 +65,7 @@ router.get('/dashboard/', withAuth, async (req, res) => {
     });
 
     const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+
     res.render('dashboard', {
       blogs,
       loggedIn: req.session.loggedIn,
