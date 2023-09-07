@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Blog, User, Comment } = require('../models');
+const { Post, User, Comment } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
-// GET all blogs for homepage
+// GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbBlogData = await Blog.findAll({
+    const dbBlogData = await Post.findAll({
       order: [['id', 'DESC']],
       include: [{ model: User }],
     });
@@ -23,10 +23,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one blog by id
+// GET one post by id
 router.get('/post/:id', async (req, res) => {
   try {
-    const dbBlogData = await Blog.findByPk(req.params.id, {
+    const dbBlogData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -58,11 +58,11 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-// GET blogs of the logged in user
-// Use the custom middleware before allowing the user to access the blog
+// GET blog posts of the logged in user
+// Use the custom middleware before allowing the user to access the dashboard
 router.get('/dashboard/', withAuth, async (req, res) => {
   try {
-    const dbBlogData = await Blog.findAll({
+    const dbBlogData = await Post.findAll({
       include: [{ model: User }],
       where: {
         userId: req.session.userId,
@@ -93,7 +93,7 @@ router.get('/login', (req, res) => {
 // Use the custom middleware before allowing the user to create a post
 router.post('/', withAuth, async (req, res) => {
   try {
-    const dbBlogData = await Blog.create({
+    const dbBlogData = await Post.create({
       title: req.body.title,
       description: req.body.description,
       userId: req.session.userId,
@@ -108,9 +108,10 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+//GET route to get a post by id for editing
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
-    const dbBlogData = await Blog.findByPk(req.params.id, {
+    const dbBlogData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -132,8 +133,9 @@ router.get('/edit/:id', withAuth, async (req, res) => {
   }
 });
 
+//UPDATE route to update a post by id
 router.put('/update/:id', withAuth, async (req, res) => {
-  const post = await Blog.update(
+  const post = await Post.update(
     {
       title: req.body.title,
       description: req.body.description,
@@ -144,20 +146,17 @@ router.put('/update/:id', withAuth, async (req, res) => {
       },
     }
   );
-  // if (post[0] === 0) {
-  //   res.status(404).json({ message: 'No post found with this id!' });
-  //   return;
-  // }
   res.render('editpost', {
     post,
     blogId: req.session.blogId,
     loggedIn: req.session.loggedIn,
   });
 });
-//delete post
+
+//DELETE route to delete a post
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Blog.destroy({
+    const postData = await Post.destroy({
       where: {
         id: req.params.id,
       },
@@ -172,6 +171,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 //to render the handlebar addnewpost
 router.get('/addnewpost', withAuth, async (req, res) => {
   try {

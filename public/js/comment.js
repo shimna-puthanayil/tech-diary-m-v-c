@@ -1,3 +1,4 @@
+// to save comment
 const newFormHandler = async (event) => {
   event.preventDefault();
   const id = window.location.toString().split('/')[
@@ -25,6 +26,7 @@ const newFormHandler = async (event) => {
 document
   .querySelector('.comment-form')
   .addEventListener('submit', newFormHandler);
+
 let textareaDescription = document.querySelector('#text-description');
 // //Calculates the Textarea Height
 function calcHeight(value) {

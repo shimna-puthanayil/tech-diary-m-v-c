@@ -1,3 +1,4 @@
+//to save a post
 const newFormHandler = async (event) => {
   event.preventDefault();
   const title = document.querySelector('#title').value.trim();
@@ -10,7 +11,6 @@ const newFormHandler = async (event) => {
         'Content-Type': 'application/json',
       },
     });
-
     if (response.ok) {
       document.location.replace(`/dashboard`);
     } else {
