@@ -26,19 +26,21 @@ document.querySelector('#update-post').addEventListener('click', updatePost);
 //to delete a post
 const deletePost = async (event) => {
   event.preventDefault();
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
+  if (confirm('Do you want to delete this post ?')) {
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
+    ];
 
-  if (id && title && description) {
-    const response = await fetch(`/${id}`, {
-      method: 'DELETE',
-    });
+    if (id && title && description) {
+      const response = await fetch(`/${id}`, {
+        method: 'DELETE',
+      });
 
-    if (response.ok) {
-      document.location.replace(`/dashboard`);
-    } else {
-      alert('Failed to delete post');
+      if (response.ok) {
+        document.location.replace(`/dashboard`);
+      } else {
+        alert('Failed to delete post');
+      }
     }
   }
 };
