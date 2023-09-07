@@ -8,7 +8,7 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const dbCommentData = await Comment.create({
       comment: req.body.comment,
-      blogId: req.session.blogId,
+      postId: req.session.postId,
       userId: req.session.userId,
     });
     console.log(dbCommentData);

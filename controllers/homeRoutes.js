@@ -11,10 +11,10 @@ router.get('/', async (req, res) => {
       include: [{ model: User }],
     });
 
-    const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+    const posts = dbBlogData.map((blog) => blog.get({ plain: true }));
 
     res.render('homepage', {
-      blogs,
+      posts,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -45,11 +45,11 @@ router.get('/post/:id', async (req, res) => {
         },
       ],
     });
-    req.session.blogId = req.params.id;
+    req.session.postId = req.params.id;
     const blog = dbBlogData.get({ plain: true });
     res.render('post', {
       blog,
-      blogId: req.session.blogId,
+      postId: req.session.postId,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -119,12 +119,12 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         },
       ],
     });
-    req.session.blogId = req.params.id;
+    req.session.postId = req.params.id;
     const post = dbBlogData.get({ plain: true });
     console.log(post);
     res.render('editpost', {
       post,
-      blogId: req.session.blogId,
+      postId: req.session.postId,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -148,7 +148,7 @@ router.put('/update/:id', withAuth, async (req, res) => {
   );
   res.render('editpost', {
     post,
-    blogId: req.session.blogId,
+    postId: req.session.postId,
     loggedIn: req.session.loggedIn,
   });
 });

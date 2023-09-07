@@ -15,13 +15,13 @@ Post.belongsTo(User, {
 
 //Post can have many comments
 Post.hasMany(Comment, {
-  foreignKey: 'blogId',
+  foreignKey: 'postId',
   onDelete: 'CASCADE',
 });
 
 //comment belongs to one post
 Comment.belongsTo(Post, {
-  foreignKey: 'blogId',
+  foreignKey: 'postId',
 });
 
 //User can write many comments
