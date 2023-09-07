@@ -11,7 +11,6 @@ router.post('/', withAuth, async (req, res) => {
       postId: req.session.postId,
       userId: req.session.userId,
     });
-    console.log(dbCommentData);
     if (dbCommentData) {
       res.status(200).json(dbCommentData);
     }

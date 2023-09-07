@@ -1,14 +1,13 @@
-<div class='row justify-content-center'>
-  <div class='login-card'>
-    <h2 class='page-title px-3 mt-2'>Add New Post</h2>
-    <form class='form login-form px-3'>
+<div class='row justify-content-center px-3'>
+  <div class='card p-0'>
+    <header class='p-0'><h5 class='page-title mt-2 px-4'>Add New Post</h5></header>
+    <form class='form login-form px-3 px-4 me-3'>
       <div class='form-group'>
         <label for='title'>Title</label>
         <input id='title' class='form-input' type='text' />
       </div>
       <div class='form-group'>
         <label for='description'>Description</label>
-        {{! <input id='description' class='form-input text-area' type='text' /> }}
         <textarea
           id='description'
           name='ingredients'
@@ -26,6 +25,5 @@
       </div>
     </form>
   </div>
-
 </div>
 <script src='/js/post.js'></script>

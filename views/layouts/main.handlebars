@@ -24,11 +24,13 @@
         <nav class='w-100 text-end d-inline me-3'>
 
           <a href='/'>Home</a>
-          <a href='/dashboard'>Dashboard</a>
+         
+           <a href="/dashboard" class="ps-0">Dashboard</a>
           {{#if loggedIn}}
-            <button id='logout' class='btn-no-style'>Logout</button>
+            <button id='logout' class='btn-no-style ms-0'>Logout</button>
           {{else}}
-            <a href='/login'>Login</a>
+            <a class='px-0' href='/login'>Login</a>
+           
           {{/if}}
         </nav>
 

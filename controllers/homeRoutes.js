@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one post by id
+// GET one post by id .This includes the comments related to the post
 router.get('/post/:id', async (req, res) => {
   try {
     const dbBlogData = await Post.findByPk(req.params.id, {
@@ -33,7 +33,7 @@ router.get('/post/:id', async (req, res) => {
           attributes: ['id', 'name'],
         },
         {
-          //to get all the comments related to the recipe including the names of the users who commented
+          //to get all the comments related to the post including the names of the users who commented
           model: Comment,
           attributes: ['dateCreated', 'comment'],
           include: [
@@ -80,6 +80,7 @@ router.get('/dashboard/', withAuth, async (req, res) => {
   }
 });
 
+//to render login page
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -176,7 +177,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 router.get('/addnewpost', withAuth, async (req, res) => {
   try {
     res.render('addnewpost', {
-      logged_in: req.session.logged_in,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);

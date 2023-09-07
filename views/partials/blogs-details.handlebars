@@ -1,4 +1,4 @@
-<section class='card'>
+<section class='card clearfix'>
   <a href='/post/{{id}}'>
     <header><div class='d-flex justify-content-between'><h5
           class='heading-title mx-3'
@@ -8,6 +8,9 @@
           on
           {{format_date dateCreated}}</h5></div>
     </header>
+
+    <div id='over_flow'>
+      <p class='mx-4 px-1'>{{description}}</p>
+    </div>
   </a>
-  <p class='mx-4 px-1 py-3'>{{description}}</p>
 </section>

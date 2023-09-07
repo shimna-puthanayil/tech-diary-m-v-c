@@ -1,6 +1,6 @@
 :root {
   --primary: #293a37;
-  --secondary: #86938f;
+  --secondary: #cacecd;
   --tertiary: #406059;
   --quatrinary: #6c6b67;
   --light: #d7dad7;
@@ -70,7 +70,7 @@ nav a:hover {
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
+  padding-right: 20px;
   text-decoration: none;
   font-size: 100%;
   transition: color 0.1s;
@@ -142,10 +142,10 @@ nav a:hover {
 
 h1.heading {
   background-color: var(--secondary);
-  width: 500px;
-  padding: 20px;
+  width: 280px;
+  padding-left: 10px;
   margin-left: 15px;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--dark);
   display: inline-block;
   border-radius: var(--border-radius);
@@ -243,4 +243,15 @@ form .form-input {
   resize: none;
   min-height: 40px;
   line-height: 22px;
+}
+
+#over_flow p {
+  line-height: 30px;
+  overflow: hidden;
+  font-size: 20px;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
