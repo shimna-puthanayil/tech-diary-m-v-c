@@ -6,8 +6,14 @@
           {{format_date blog.dateCreated}}</h5></div>
           </header>
 
-  <p class="mx-4 px-1 py-3">{{blog.description}}</p>
-
+  {{!-- <p class="mx-4 px-1 py-3">{{blog.description}}</p> --}}
+ <textarea
+    id='text-description'
+    name='description'
+    class='form-input textarea mx-4 px-1 py-3'
+    rows='5'
+    cols='80' 
+  >{{blog.description}}</textarea> 
 </section>
 
 <div class='shadow-sm p-3 mx-0 mb-5 rounded col-12 col-sm-12 comment-form'>

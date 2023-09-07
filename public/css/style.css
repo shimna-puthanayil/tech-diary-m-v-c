@@ -237,3 +237,17 @@ form .form-input {
 #delete-post:hover {
   background-color: var(--error);
 }
+
+#text-description {
+  background-color: var(--secondary);
+  border: none;
+}
+.textarea {
+  outline: none;
+  border: none;
+  resize: none;
+  /* width: 100%; */
+  min-height: 40px;
+  line-height: 22px;
+
+}

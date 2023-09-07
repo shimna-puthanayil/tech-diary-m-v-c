@@ -25,3 +25,24 @@ const newFormHandler = async (event) => {
 document
   .querySelector('.comment-form')
   .addEventListener('submit', newFormHandler);
+let textareaDescription = document.querySelector('#text-description');
+// //Calculates the Textarea Height
+function calcHeight(value) {
+  let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+  //// min-height + lines x line-height + padding + border
+  let newHeight = 20 + numberOfLineBreaks * 38 + 12 + 2;
+  return newHeight;
+}
+
+//sets the height of the textArea on size change
+function textAreaSize() {
+  textareaDescription.style.height =
+    calcHeight(textareaDescription.value) + 'px';
+  textareaDescription.setAttribute('readonly', true);
+  textareaDescription.setAttribute('resize', false);
+  textareaDescription.style.height = textareaDescription.scrollHeight;
+  textareaDescription.style.height = textareaDescription.scrollHeight;
+  textareaDescription.setAttribute('readonly', true);
+}
+textAreaSize();
+new ResizeObserver(textAreaSize).observe(textareaDescription);
