@@ -1,17 +1,15 @@
 {{#each blogs as |blog|}}
   <section class='card'>
-    <a href='/blog/{{id}}'>
-        <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{name}}</h5>
+    <a href='/edit/{{id}}'>
+        <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{title}}</h5>
         <h5 class='heading-createdby me-3'>Posted By:{{user.name}}
           on
           {{format_date dateCreated}}</h5></div>
           </header>
-    
     </a>
-
   </section>
 {{/each}}
-<button
+       <button
           id='add-post'
           class='btn btn-primary rounded-pill px-4 py-1  mt-1'
           type='submit'

@@ -1,7 +1,7 @@
 :root {
   --primary: #293a37;
   --secondary: #86938f;
-  --tertiary: #5e877f;
+  --tertiary: #406059;
   --quatrinary: #6c6b67;
   --light: #d7dad7;
   --dark: #182c23;
@@ -42,9 +42,7 @@ main {
 }
 
 nav {
-  /* display: flex; */
   color: var(--light);
-  /* margin-left: 1200px; */
 }
 
 nav a {
@@ -56,7 +54,7 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  /* background-color: var(--dark); */
 }
 
 .blog {
@@ -112,14 +110,6 @@ nav a:hover {
   width: 75%;
 }
 
-.login-card {}
-
-.signup-card {
-  /* position: relative; */
-  /* left: 250px; */
-  /* top: -350px; */
-}
-
 .card header {
   color: var(--light);
   font-weight: bold;
@@ -154,8 +144,6 @@ nav a:hover {
   align-items: center;
 }
 
-
-
 h1.heading {
   background-color: var(--secondary);
   width: 500px;
@@ -174,7 +162,7 @@ h1.heading {
   /* width: 100%; */
 }
 
-#text-comment {
+.text-area {
   height: 100px;
   background-color: var(--light);
 }
@@ -185,7 +173,8 @@ h1.heading {
 }
 
 .btn.btn-primary:hover {
-  /* background-color: var(--quatrinary) */
+  background-color: var(--tertiary);
+  border-color: var(--tertiary);
 }
 
 .btn {
@@ -202,8 +191,6 @@ h1.heading {
   background-color: #aeaeae;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
-
-
 
 form {
   width: 100%;

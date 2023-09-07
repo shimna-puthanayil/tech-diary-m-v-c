@@ -3,6 +3,7 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // CREATE new comment
+// Use the custom middleware before allowing the user to post a comment 
 router.post('/', withAuth, async (req, res) => {
   try {
     const dbCommentData = await Comment.create({

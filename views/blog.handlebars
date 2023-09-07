@@ -1,6 +1,6 @@
 <section class='card'>
  
-    <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{blog.name}}</h5>
+    <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{blog.title}}</h5>
         <h5 class='heading-createdby me-3'>Posted By : {{blog.user.name}}
           on
           {{format_date blog.dateCreated}}</h5></div>
@@ -25,7 +25,7 @@
     <form class='form'>
       <div class='form-group col-12 col-sm-12'>
         <input
-          class='form-input'
+          class='form-input text-area '
           type='textArea'
           id='text-comment'
           placeholder='Comment'
