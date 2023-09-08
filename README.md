@@ -19,7 +19,7 @@ The project helps to to build a CMS-style blog which follows the MVC paradigm in
 
 - Create a .env file in the root directory and add the environment variables to hold your MySQL username, password and database name.
 
-      DB_NAME='ecommerce_db'
+      DB_NAME='techblog_db'
       DB_USER='root'
       DB_PW='password'
 
