@@ -46,9 +46,9 @@ router.get('/post/:id', async (req, res) => {
       ],
     });
     req.session.postId = req.params.id;
-    const blog = dbBlogData.get({ plain: true });
+    const post = dbBlogData.get({ plain: true });
     res.render('post', {
-      blog,
+      post,
       postId: req.session.postId,
       loggedIn: req.session.loggedIn,
     });
@@ -69,10 +69,16 @@ router.get('/dashboard/', withAuth, async (req, res) => {
       },
     });
 
-    const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+    const posts = dbBlogData.map((blog) => blog.get({ plain: true }));
+    const dbUserData = await User.findOne({
+      where: {
+        id: req.session.userId,
+      },
+    });
     res.render('dashboard', {
-      blogs,
+      posts,
       loggedIn: req.session.loggedIn,
+      userName: dbUserData.name,
     });
   } catch (err) {
     console.log(err);

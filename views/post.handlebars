@@ -1,9 +1,9 @@
 {{!-- ================================= Post details ================================== --}}
 <section class='card'>
-    <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{blog.title}}</h5>
-        <h5 class='heading-createdby me-3'>Posted By : {{blog.user.name}}
+    <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{post.title}}</h5>
+        <h5 class='heading-createdby me-3'>Posted by  {{post.user.name}}
           on
-          {{format_date blog.dateCreated}}</h5></div>
+          {{format_date post.dateCreated}}</h5></div>
           </header>
  <textarea
     id='text-description'
@@ -11,7 +11,7 @@
     class='form-input textarea mx-4 px-1 py-3'
     rows='5'
     cols='80' 
-  >{{blog.description}}</textarea> 
+  >{{post.description}}</textarea> 
 </section>
 
  {{!-- ================================= Comment Section================================== --}}
@@ -19,7 +19,7 @@
 <div class='shadow-sm p-3 mx-0 mb-5 rounded col-12 col-sm-12 comment-form'>
   <h5 class='px-3 mt-1 mb-3'>{{this.blog.comments.length}} Comments 💬</h5>
 
-  {{#each blog.comments as |comment|}}
+  {{#each post.comments as |comment|}}
     <section class='mx-3'>
       <h6 class='fs-5 mb-0'>{{comment.user.name}}</h6>
       <h6 class='card-subtitle text-body-secondary mb-2'>
@@ -30,19 +30,36 @@
   <section class='mx-3'>
     <form class='form'>
       <div class='form-group col-12 col-sm-12'>
+         {{#if loggedIn}}
         <input
           class='form-input text-area '
           type='textArea'
           id='text-comment'
           placeholder='Comment'
         />
+        {{else}}
+         <input
+          class='form-input text-area '
+          type='textArea'
+          id='text-comment'
+          placeholder='You must be logged in to comment' disabled
+        />
+        {{/if}}
       </div>
       <div class='form-group'>
+        {{#if loggedIn}}
         <button
           id='save-comment'
           class='btn btn-primary rounded-pill px-4 py-0 mx-0 mt-1'
           type='submit'
         >Save</button>
+          {{else}}
+           <button
+          id='save-comment'
+          class='btn btn-primary rounded-pill px-4 py-0 mx-0 mt-1'
+          type='submit' disabled
+        >Save</button>
+          {{/if}}
       </div>
     </form>
   </section>

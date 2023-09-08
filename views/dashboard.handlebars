@@ -1,9 +1,10 @@
-{{#each blogs as |blog|}}
+<h3 class='heading-title mx-3 mb-4'>Welcome to your profile, {{userName}} </h3>
+{{#each posts as |post|}}
   <section class='card'>
     <a href='/edit/{{id}}'>
-        <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3'>{{title}}</h5>
-        <h5 class='heading-createdby me-3'>Posted By:{{user.name}}
-          on
+        <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3 my-1'>{{title}}</h5>
+        <h5 class='heading-createdby me-3 my-1'>
+        
           {{format_date dateCreated}}</h5></div>
           </header>
     </a>
