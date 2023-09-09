@@ -85,11 +85,15 @@ nav a:hover {
 
 .card,
 .comment-form {
-  /* margin: 20px; */
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--secondary);
   color: var(--dark);
+  width: 100%;
+}
+
+.dashboard-card {
+  border-style: 7px groove var(--dark);
   width: 100%;
 }
 

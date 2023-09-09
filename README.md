@@ -3,8 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-
-The project helps to to build a CMS-style blog which follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+The project helps to build a CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts as well. They can also update or delete their posts. This application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## Installation
 
@@ -43,6 +42,7 @@ The project helps to to build a CMS-style blog which follows the MVC paradigm in
 
 ## Usage
 
+The user is presented with the home page which includes existing blog posts and navigation links to the dashboard ,login and home at the top right side of the page when the application is opened. When the user clicks on any of the existing blog posts, then the details of that blog will be displayed with the title ,description ,name of the author and the date created along with the comments. The comment section includes the name of the person who commented and date with each comment. The user will be able to see the details and comments on a post but won't be able to write a comment unless they are logged in. When the user clicks on any of the other navigation links than home, he/she will be redirected to the login page . The users can create an account by providing username ,email and password. On sign up and log in  they will be redirected to the dashboard where they will be able to see all the post titles along with date created by them and an option to add new post. When one of the posts are clicked they will be presented with the title and description of that post where they can update or delete. On session time out the users will be redirected to log in page before they can comment, add, update or delete a post.
 
 #### Link to deployed application 
 

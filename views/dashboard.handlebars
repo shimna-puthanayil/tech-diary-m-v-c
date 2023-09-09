@@ -1,6 +1,8 @@
-<h3 class='heading-title mx-3 mb-4'>Welcome to your profile, {{userName}} </h3>
+<div class='row  px-3'>
+  <div class='card d-flex align-items-center p-3'>
+<h3 class='heading-title mx-3 mt-1 mb-3'>Welcome to your profile, {{userName}} </h3>
 {{#each posts as |post|}}
-  <section class='card'>
+  <section class='card dashboard-card  '>
     <a href='/edit/{{id}}'>
         <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3 my-1'>{{title}}</h5>
         <h5 class='heading-createdby me-3 my-1'>
@@ -12,7 +14,9 @@
 {{/each}}
 <button
  id='add-post'
- class='btn btn-primary rounded-pill px-4 py-1  mt-1'
+ class='btn btn-primary rounded-pill px-4 py-1  mt-1 mb-3 w-25'
  type='submit'
  >+ Add New Post</button>
+ </div>
+ </div>
  <script src='/js/dashboard.js'></script>
