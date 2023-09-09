@@ -65,7 +65,9 @@ The following images show the application's appearance and functionality :
 
 **Post details**
 
-![LM 2](./public/images/post.png)
+![LM 2](./public/images/post1.png)
+
+![LM 2](./public/images/post2.png)
 
 **Log in / Sign Up**
 
@@ -81,7 +83,11 @@ The following images show the application's appearance and functionality :
 
 **Update and Delete**
 
-![LM 5](./public/images/update.png)
+![LM 5](./public/images/edit.png)
+
+**404**
+
+![LM 5](./public/images/404.png)
 
 ## Credits
 

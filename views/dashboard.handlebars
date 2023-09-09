@@ -2,9 +2,9 @@
   <div class='card d-flex align-items-center p-3'>
 <h3 class='heading-title mx-3 mt-1 mb-3'>Welcome to your profile, {{userName}} </h3>
 {{#each posts as |post|}}
-  <section class='card dashboard-card  '>
+  <section class='card dashboard-card'>
     <a href='/edit/{{id}}'>
-        <header><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3 my-1'>{{title}}</h5>
+        <header class='card-color'><div class="d-flex justify-content-between"</div><h5 class='heading-title mx-3 my-1'>{{title}}</h5>
         <h5 class='heading-createdby me-3 my-1'>
         
           {{format_date dateCreated}}</h5></div>

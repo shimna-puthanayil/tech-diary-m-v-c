@@ -45,6 +45,9 @@ router.get('/post/:id', async (req, res) => {
         },
       ],
     });
+    if (!dbBlogData) {
+      return res.status(404).render('404');
+    }
     req.session.postId = req.params.id;
     const post = dbBlogData.get({ plain: true });
     res.render('post', {
@@ -126,9 +129,11 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         },
       ],
     });
+    if (!dbBlogData) {
+      return res.status(404).render('404');
+    }
     req.session.postId = req.params.id;
     const post = dbBlogData.get({ plain: true });
-    console.log(post);
     res.render('editpost', {
       post,
       postId: req.session.postId,
@@ -189,5 +194,8 @@ router.get('/addnewpost', withAuth, async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
+router.get('*', (req, res) => {
+  res.status(404).render('404');
 });
 module.exports = router;

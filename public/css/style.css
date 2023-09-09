@@ -95,6 +95,8 @@ nav a:hover {
 .dashboard-card {
   border-style: 7px groove var(--dark);
   width: 100%;
+
+
 }
 
 .login-card,
@@ -258,4 +260,8 @@ form .form-input {
   display: -webkit-inline-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.card-color {
+  background-color: #84a09a;
 }
