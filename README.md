@@ -3,6 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
+
 The project helps to build a CMS-style blog site where developers can publish their blog posts and comment on other developers’ posts as well. They can also update or delete their posts. This application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## Installation
@@ -57,7 +58,7 @@ npm start
 
 When the application is invoked using 'npm start' then the server will start listening on port 3001 and the application can be invoked at http://localhost:3001/
 
-The following images show the application's appearance and functionality :
+The following images show the web application's appearance and functionality :
 
 **Home Page**
 
